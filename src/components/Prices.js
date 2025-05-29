@@ -27,7 +27,7 @@ function PricingTable() {
   ];
 
   return (
-    <div className="bg-blue-50 min-h-screen flex flex-col items-center py-14 px-4 md:px-8">
+    <div className="bg-gradient-to-b from-[#EFF6FF] to-[#FDF6EC] flex flex-col items-center py-8 px-4 md:px-8">
       <h1 className="text-4xl sm:text-5xl font-extrabold text-orange-400 mb-10 text-center">
         PREISE
       </h1>

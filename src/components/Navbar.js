@@ -105,7 +105,7 @@ const Navbar = () => {
                         {navItems.map((item, idx) => (
                             <li
                                 key={idx}
-                                className={`hover:text-orange-500 transition-colors ${activeSection === item.id ? "text-orange-500" : ""
+                                className={`hover:text-[#FFC000] transition-colors ${activeSection === item.id ? "text-[#FFC000]" : ""
                                     }`}
                             >
                                 <a href={`#${item.id}`} onClick={() => setIsOpen(false)}>

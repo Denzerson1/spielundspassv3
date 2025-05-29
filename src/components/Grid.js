@@ -59,7 +59,7 @@ const playAreas = [
 
 const PlayAreaGrid = () => {
   return (
-    <div className="w-full flex justify-center bg-[#f0f8ff] py-10">
+    <div className="w-full flex justify-center bg-gradient-to-b from-[#E0F7FA] to-[#EFF6FF]">
       <div className="w-full max-w-7xl px-4">
         <h1 className="text-4xl font-bold text-center text-orange-500 mb-4">HEY! LET'S PLAY!</h1>
         <p className="text-center text-lg font-semibold text-gray-700 mb-10">
@@ -82,5 +82,6 @@ const PlayAreaGrid = () => {
     </div>
   );
 };
+
 
 export default PlayAreaGrid;

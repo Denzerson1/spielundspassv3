@@ -8,7 +8,6 @@ const slides = [
   require('../img/spiele/kids.jpeg'),
 ];
 
-
 const Slideshow = () => {
   const [index, setIndex] = useState(0);
 
@@ -21,26 +20,40 @@ const Slideshow = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-gray-900 font-mukta">
+      
+      {/* Slides */}
       <div
         className="absolute inset-0 flex transition-transform duration-1000"
         style={{ transform: `translateX(-${index * 100}%)` }}
       >
         {slides.map((src, i) => (
-          <img key={i} src={src} alt={`Slide ${i + 1}`} className="w-full h-full object-cover flex-shrink-0" loading="lazy" />
+          <img
+            key={i}
+            src={src}
+            alt={`Slide ${i + 1}`}
+            className="w-full h-full object-cover flex-shrink-0"
+            loading="lazy"
+          />
         ))}
       </div>
 
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center">
-        <p className="text-white mt-4 text-lg sm:text-xl md:text-2xl lg:text-3xl font-light">lalalaaaaalallalalalalalalalalllalalallalaal</p>
-        
+      {/* Gradient Overlay (bottom 10%) */}
+      <div className="absolute bottom-0 left-0 w-full h-[10%] bg-gradient-to-t from-black to-transparent z-10" />
+
+      {/* Text near bottom */}
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20 text-center">
+        <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-light drop-shadow-lg">
+          Der schönste Ort für unvergessliche Kindergeburtstage!
+        </p>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-6 text-[#000]">
+      {/* Social Icons */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex space-x-6 text-white">
         <a href="https://www.facebook.com/austriantaj/" target="_blank" rel="noopener noreferrer">
-          <FaFacebookF size={24} className="hover:text-[#b89f30]" />
+          <FaFacebookF size={24} className="hover:text-[#D19900]" />
         </a>
         <a href="https://www.instagram.com/austriantaj1080/" target="_blank" rel="noopener noreferrer">
-          <FaInstagram size={24} className="hover:text-[#b89f30]" />
+          <FaInstagram size={24} className="hover:text-[#D19900]" />
         </a>
       </div>
     </div>
