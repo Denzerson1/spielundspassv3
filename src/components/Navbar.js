@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "../img/spielundspass_bg.png";
+import { PopupButton } from 'react-calendly';
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
+    const location = useLocation();
     const [isSticky, setIsSticky] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [visible, setVisible] = useState(true);
@@ -27,53 +30,74 @@ const Navbar = () => {
     }, []);
 
     useEffect(() => {
-        const sectionIds = [
-            "home",
-            "über-uns",
-            "party",
-            "preise",
-            "fotos",
-            "party-blog",
-            "kontakt",
-        ];
+        // Only observe sections if we're on the homepage or a page with sections
+        if (location.pathname === "/" || location.pathname === "/home") {
+            const sectionIds = [
+                "home",
+                "über-uns",
+                "party",
+                "preise",
+                "fotos",
+                "party-blog",
+                "kontakt",
+            ];
 
-        const observer = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
-                    }
-                });
-            },
-            {
-                rootMargin: "-50% 0px -50% 0px",
-                threshold: 0,
-            }
-        );
+            const observer = new IntersectionObserver(
+                entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setActiveSection(entry.target.id);
+                        }
+                    });
+                },
+                {
+                    rootMargin: "-50% 0px -50% 0px",
+                    threshold: 0,
+                }
+            );
 
-        sectionIds.forEach(id => {
-            const section = document.getElementById(id);
-            if (section) observer.observe(section);
-        });
+            sectionIds.forEach(id => {
+                const section = document.getElementById(id);
+                if (section) observer.observe(section);
+            });
 
-        return () => observer.disconnect();
-    }, []);
+            return () => observer.disconnect();
+        } else {
+            // On routed pages (e.g. /kontakt) no section observing needed
+            setActiveSection(""); 
+        }
+    }, [location.pathname]);
 
+    // Nav items: id here represents the path or the section id
     const navItems = [
-        { label: "Home", id: "" },
+        { label: "Home", id: "/" },
         { label: "Über uns", id: "über-uns" },
         { label: "Party", id: "party" },
-        { label: "Preise", id: "preise" },
+        { label: "Preise", id: "/preise" },
         { label: "Fotos", id: "fotos" },
         { label: "Party-Blog", id: "party-blog" },
-        { label: "Kontakt", id: "kontakt" },
+        { label: "Kontakt", id: "/kontakt" },
     ];
+
+    // Determine which nav item is active
+    // If the location.pathname matches a nav item id (full path), highlight it.
+    // Otherwise, use activeSection from scroll.
+    const getActiveClass = (itemId) => {
+        if (itemId.startsWith("/")) {
+            // For full route paths like "/kontakt"
+            return location.pathname === itemId ? "text-[#FFC000]" : "";
+        } else {
+            // For section IDs like "party"
+            return activeSection === itemId ? "text-[#FFC000]" : "";
+        }
+    };
 
     return (
         <header
             className={`w-full fixed top-0 left-0 z-50 transition-all duration-500 ease-in-out 
-            ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"} 
-            ${isSticky ? "bg-[#f9ffff]/90 shadow" : "bg-transparent"} backdrop-blur-sm`}
+                ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"} 
+                ${isSticky ? "bg-[#f9ffff]/90 shadow text-gray-700" : "bg-transparent text-white"} 
+                backdrop-blur-sm`}
         >
             <div className="flex flex-col items-center py-2 px-4 md:px-8 pb-6">
                 {/* Logo */}
@@ -91,7 +115,7 @@ const Navbar = () => {
                 <div className="w-full flex items-center justify-between md:justify-center relative">
                     {/* Hamburger */}
                     <button
-                        className="md:hidden text-gray-700"
+                        className="md:hidden"
                         onClick={() => setIsOpen(!isOpen)}
                         aria-label="Toggle Menu"
                     >
@@ -100,15 +124,20 @@ const Navbar = () => {
 
                     {/* Navigation Links */}
                     <ul
-                        className={`${isOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row items-center gap-5 text-gray-700 font-semibold text-sm sm:text-base text-center absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent py-4 md:py-0 shadow-md md:shadow-none z-40`}
+                        className={`${isOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row items-center gap-5
+                            font-semibold text-sm sm:text-base text-center absolute md:static top-full left-0 w-full md:w-auto
+                            ${isSticky ? "text-black" : "text-white"} bg-white md:bg-transparent py-4 md:py-0 shadow-md md:shadow-none z-40`}
                     >
                         {navItems.map((item, idx) => (
                             <li
                                 key={idx}
-                                className={`hover:text-[#FFC000] transition-colors ${activeSection === item.id ? "text-[#FFC000]" : ""
-                                    }`}
+                                className={`pt-2 hover:text-[#FFC000] transition-colors ${getActiveClass(item.id)}`}
                             >
-                                <a href={`#${item.id}`} onClick={() => setIsOpen(false)}>
+                                {/* Use # for section links and full path for routes */}
+                                <a
+                                    href={item.id.startsWith("/") ? item.id : `#${item.id}`}
+                                    onClick={() => setIsOpen(false)}
+                                >
                                     {item.label}
                                 </a>
                             </li>
@@ -116,17 +145,23 @@ const Navbar = () => {
 
                         {/* BUCHUNG button (mobile) */}
                         <li className="md:hidden">
-                            <button className="bg-white rounded-full px-6 py-2 text-sm font-bold text-[#2b3856] shadow-md hover:bg-gray-100 tracking-wide">
-                                BUCHUNG
-                            </button>
+                            <PopupButton
+                                url="https://calendly.com/spielundspass"
+                                rootElement={document.getElementById('root')}
+                                text="Jetzt buchen"
+                                className="bg-white rounded-full px-6 py-2 text-sm font-bold text-[#2b3856] shadow-md hover:bg-gray-100 tracking-wide"
+                            />
                         </li>
                     </ul>
 
                     {/* BUCHUNG button (desktop) */}
                     <div className="hidden sm:block absolute right-4 sm:right-[8%]">
-                        <button className="bg-white rounded-full px-5 sm:px-6 py-2 text-sm font-bold text-[#2b3856] shadow-md hover:bg-gray-100 tracking-wide">
-                            BUCHUNG
-                        </button>
+                        <PopupButton
+                            url="https://calendly.com/spielundspass"
+                            rootElement={document.getElementById('root')}
+                            text="Jetzt buchen"
+                            className="bg-white rounded-full px-6 py-2 text-sm font-bold text-[#2b3856] shadow-md hover:bg-gray-100 tracking-wide"
+                        />
                     </div>
                 </div>
             </div>

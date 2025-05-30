@@ -1,5 +1,6 @@
 import React from "react";
 import { Clock } from "lucide-react";
+import { PopupButton } from 'react-calendly';
 
 function PricingTable() {
   const commonDetails = [
@@ -74,9 +75,14 @@ function PricingTable() {
         <p className="text-gray-600 text-sm sm:text-base">
           Bei uns ist jeder willkommen, unabhängig vom Alter!
         </p>
-        <button className="mt-5 px-6 py-2 bg-gray-800 text-white text-sm sm:text-base rounded-full shadow-md hover:bg-gray-700 transition duration-200">
-          Jetzt buchen!
-        </button>
+
+        <PopupButton
+          url="https://calendly.com/spielundspass"
+          rootElement={document.getElementById('root')}
+          text="Jetzt buchen"
+          className="mt-5 px-6 py-2 bg-gray-800 text-white text-sm sm:text-base rounded-full shadow-md hover:bg-gray-700 transition duration-200"
+        />
+
       </div>
     </div>
   );

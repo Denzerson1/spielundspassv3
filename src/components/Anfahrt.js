@@ -2,7 +2,7 @@ function LocationMap() {
     return (
       <section className="pt-8 pb-16 bg-gradient-to-b from-[#FDF6EC] to-[#FFF8E1] px-6 pt-4">
         <h2 className="text-4xl font-bold text-center text-gray-700 mb-4 drop-shadow-sm">
-          So finden Sie uns
+          Hier finden Sie uns
         </h2>
   
         <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">

@@ -54,11 +54,11 @@ import {
           <div>
             <h3 className="font-semibold text-[#D19900] mb-3">Kontakt</h3>
             <p className="text-sm text-[#444] leading-6">
-              Fasangasse 36<br />
-              1030 Wien<br />
-              +43 (0) 677 626 521 85<br />
+              Dückegasse 7/2 <br />
+              1220 Wien<br />
+              +43 (0) 0676 4652228<br />
               <a href="mailto:office@spielraumkingandqueen.at" className="text-[#00B0F0] underline">
-                office@spielraumkingandqueen.at
+                office@spielundspass.co.at
               </a>
             </p>
           </div>
