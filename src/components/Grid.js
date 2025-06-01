@@ -1,59 +1,61 @@
 import React from "react";
+import fahrzeuge from '../img/fahrzeuge.jpeg';
+import ballebad from '../img/Ballebad.jpeg';
 
 const playAreas = [
   {
     title: "Spielburg",
-    image: "/images/spielburg.jpg",
+    image: require('../img/burg.jpeg'),
     description:
-      "Entdecke Abenteuer pur in unserer fesselnden Spielburg! Kreative Rollenspiele, spannende Rutschen und unvergesslicher Spielspaß für alle kleinen Entdecker. Tauche ein in eine Welt voller Fantasie und Action!",
+      "Klettere, rutsche und entdecke spannende Abenteuer in unserer fantasievollen Spielburg!",
   },
   {
-    title: "Malerecke",
-    image: "/images/malerecke.jpg",
+    title: "Geburtstage mit Thema",
+    image: require('../img/branded.jpeg'),
     description:
-      "Lass deine künstlerische Seite erblühen in unserer zauberhaften Malerecke! Hier können kleine Künstler ihre Fantasie auf die Leinwand bringen und bunte Meisterwerke erschaffen. Entdecke die Freude am Malen und gestalte unvergessliche Kunstwerke!",
+      "Feiere unvergessliche Geburtstage mit liebevoll gestalteten Mottos und viel Spaß für alle Gäste.",
   },
   {
-    title: "Kletterwand",
-    image: "/images/kletterwand.jpg",
+    title: "Bällebad",
+    image: require('../img/spiele/balle2.jpeg'),
     description:
-      "Erobere neue Höhen in unserer aufregenden Kletterwand! Hier können kleine Abenteurer ihre Geschicklichkeit und Kraft testen, während sie sich sicher an bunten Griffen nach oben bewegen.",
+      "Tauche ein ins bunte Bällebad – hier ist Lachen und Toben garantiert!",
   },
   {
-    title: "Lesebereich",
-    image: "/images/lesebereich.jpg",
+    title: "Spielwand",
+    image: require('../img/spielwand.jpeg'),
     description:
-      "Tauche ein in spannende Geschichten in unserem gemütlichen Lesebereich! Perfekt zum Entspannen und Träumen."
+      "Entdecke spannende Spiele und fördere spielerisch deine Geschicklichkeit an unserer Spielwand.",
   },
   {
-    title: "Bauecke",
-    image: "/images/bauecke.jpg",
+    title: "Rollenspielbereich",
+    image: require('../img/spiele.jpeg'),
     description:
-      "Baue große Träume mit kleinen Händen! Unsere Bauecke bietet zahlreiche Bausteine für kreative Konstruktionen."
+      "Hier können Kinder in verschiedene Rollen schlüpfen und ihrer Fantasie freien Lauf lassen.",
   },
   {
-    title: "Musikzone",
-    image: "/images/musikzone.jpg",
+    title: "Rutsche",
+    image: require('../img/rutsche.jpeg'),
     description:
-      "Entdecke deine Liebe zur Musik! Trommeln, Glockenspiele und viele weitere Instrumente laden zum Musizieren ein."
+      "Mit Schwung die Rutsche hinunter – Spaß und Action für alle kleinen Abenteurer.",
   },
   {
-    title: "Rollenspielzone",
-    image: "/images/rollenspielzone.jpg",
+    title: "Wickelraum",
+    image: require('../img/kinderwindel.jpeg'),
     description:
-      "Verkleiden, Kochen, Arzt spielen und mehr! Hier dürfen Kinder in verschiedenste Rollen schlüpfen und ihrer Fantasie freien Lauf lassen."
+      "Unser moderner Wickelraum bietet Eltern eine saubere, komfortable Umgebung für die Kleinsten.",
   },
   {
-    title: "Wasserstation",
-    image: "/images/wasserstation.jpg",
+    title: "Küche",
+    image: require('../img/kuche.jpeg'),
     description:
-      "Wasserspaß garantiert! Entdecke physikalische Prinzipien durch spielerisches Planschen und Experimentieren."
+      "Für Eltern: Unsere voll ausgestattete Küche erleichtert das Zubereiten von Snacks und Mahlzeiten.",
   },
   {
-    title: "Ruheecke",
-    image: "/images/ruheecke.jpg",
+    title: "Toiletten",
+    image: require('../img/setting/restroom.jpeg'),
     description:
-      "Zeit zum Entspannen! In der Ruheecke können Kinder sich zurückziehen, entspannen oder ein Nickerchen machen."
+      "Helle, gepflegte Sanitäranlagen sorgen für Wohlbefinden und Hygiene für die ganze Familie.",
   }
 ];
 
@@ -61,9 +63,9 @@ const PlayAreaGrid = () => {
   return (
     <div className="w-full flex justify-center bg-gradient-to-b from-[#E0F7FA] to-[#EFF6FF]">
       <div className="w-full max-w-7xl px-4">
-        <h1 className="text-4xl font-bold text-center text-orange-500 mb-4">HEY! LET'S PLAY!</h1>
-        <p className="text-center text-lg font-semibold text-gray-700 mb-10">
-          Willkommen in unserem zauberhaften Kinderspielraum in Wien! Hier erwartet dich und deine kleinen Entdecker eine Welt voller Spaß, Abenteuer und kreativer Entfaltung!
+        <h1 className="text-4xl font-bold text-center text-orange-500 mb-4">SPIELEN. LACHEN. WOHLFÜHLEN!</h1>
+        <p className="text-center text-md font-semibold text-gray-700 mb-10">
+          Willkommen in einer Welt voller Fantasie und Geborgenheit! Bei uns erleben Kinder Abenteuer, Kreativität und Freude – während Eltern sich auf höchsten Komfort, Sicherheit und ein herzliches Ambiente verlassen können. Genießt gemeinsam besondere Momente, die in Erinnerung bleiben!
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {playAreas.map((area, index) => (
@@ -82,6 +84,5 @@ const PlayAreaGrid = () => {
     </div>
   );
 };
-
 
 export default PlayAreaGrid;

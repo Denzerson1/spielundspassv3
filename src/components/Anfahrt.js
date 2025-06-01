@@ -15,7 +15,7 @@ function LocationMap() {
           ></iframe>
   
           <p className="py-4 text-center text-lg text-gray-800 font-medium">
-            Kinderpartyraum Spiel & Spaß, Dückegasse 7/2, 1220 Wien
+            Kinderpartyraum Spiel & Spaß,<br/> Dückegasse 7/2, 1220 Wien
           </p>
         </div>
       </section>
