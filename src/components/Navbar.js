@@ -71,11 +71,9 @@ const Navbar = () => {
     // Nav items: id here represents the path or the section id
     const navItems = [
         { label: "Home", id: "/" },
-        { label: "Über uns", id: "über-uns" },
-        { label: "Party", id: "party" },
+        { label: "Über uns", id: "/über-uns" },
         { label: "Preise", id: "/preise" },
         { label: "Fotos", id: "fotos" },
-        { label: "Party-Blog", id: "party-blog" },
         { label: "Kontakt", id: "/kontakt" },
     ];
 
@@ -96,7 +94,7 @@ const Navbar = () => {
         <header
             className={`w-full fixed top-0 left-0 z-50 transition-all duration-500 ease-in-out 
                 ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"} 
-                ${isSticky ? "bg-[#f9ffff]/90 shadow text-gray-700" : "bg-transparent text-white"} 
+                ${isSticky ? "bg-[#f9ffff]/90 shadow text-gray-700" : "bg-transparent text-"} 
                 backdrop-blur-sm`}
         >
             <div className="flex flex-col items-center py-2 px-4 md:px-8 pb-6">

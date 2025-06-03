@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage';
 import Navbar from './components/Navbar';
 import Contact from './pages/Contact';
 import Preise from './pages/Preise';
+import About from './pages/About';
 import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/preise" element={<LandingPage />} />
+          <Route path="/über-uns" element={<About />} />
           <Route path="/kontakt" element={<Contact />} />
           <Route path="/preise" element={<Preise />} />
         </Routes>
