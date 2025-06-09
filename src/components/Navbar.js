@@ -30,7 +30,6 @@ const Navbar = () => {
     }, []);
 
     useEffect(() => {
-        // Only observe sections if we're on the homepage or a page with sections
         if (location.pathname === "/" || location.pathname === "/home") {
             const sectionIds = [
                 "home",
@@ -38,7 +37,6 @@ const Navbar = () => {
                 "party",
                 "preise",
                 "fotos",
-                "party-blog",
                 "kontakt",
             ];
 
@@ -63,38 +61,37 @@ const Navbar = () => {
 
             return () => observer.disconnect();
         } else {
-            // On routed pages (e.g. /kontakt) no section observing needed
-            setActiveSection(""); 
+            setActiveSection("");
         }
     }, [location.pathname]);
 
-    // Nav items: id here represents the path or the section id
     const navItems = [
         { label: "Home", id: "/" },
         { label: "Über uns", id: "/über-uns" },
         { label: "Preise", id: "/preise" },
-        { label: "Fotos", id: "fotos" },
+        { label: "Fotos", id: "/fotos" },
         { label: "Kontakt", id: "/kontakt" },
     ];
 
-    // Determine which nav item is active
-    // If the location.pathname matches a nav item id (full path), highlight it.
-    // Otherwise, use activeSection from scroll.
     const getActiveClass = (itemId) => {
-        if (itemId.startsWith("/")) {
-            // For full route paths like "/kontakt"
-            return location.pathname === itemId ? "text-[#FFC000]" : "";
-        } else {
-            // For section IDs like "party"
-            return activeSection === itemId ? "text-[#FFC000]" : "";
+        const path = location.pathname;
+
+        // Homepage: nutze activeSection für IDs wie "über-uns"
+        if (path === "/" || path === "/home") {
+            const sectionId = itemId.startsWith("/") ? itemId.slice(1) : itemId;
+            return activeSection === sectionId ? "text-[#FFC000]" : "";
         }
+
+        // Andere Seiten: vergleiche direkt mit dem Pfad
+        return path === itemId ? "text-[#FFC000]" : "";
     };
+
 
     return (
         <header
             className={`w-full fixed top-0 left-0 z-50 transition-all duration-500 ease-in-out 
                 ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"} 
-                ${isSticky ? "bg-[#f9ffff]/90 shadow text-gray-700" : "bg-transparent text-"} 
+                ${isSticky ? "bg-[#f9ffff]/90 shadow text-gray-700" : "bg-transparent text-white"} 
                 backdrop-blur-sm`}
         >
             <div className="flex flex-col items-center py-2 px-4 md:px-8 pb-6">
@@ -131,7 +128,6 @@ const Navbar = () => {
                                 key={idx}
                                 className={`pt-2 hover:text-[#FFC000] transition-colors ${getActiveClass(item.id)}`}
                             >
-                                {/* Use # for section links and full path for routes */}
                                 <a
                                     href={item.id.startsWith("/") ? item.id : `#${item.id}`}
                                     onClick={() => setIsOpen(false)}
