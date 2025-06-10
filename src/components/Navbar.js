@@ -8,21 +8,12 @@ const Navbar = () => {
     const location = useLocation();
     const [isSticky, setIsSticky] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    const [visible, setVisible] = useState(true);
     const [activeSection, setActiveSection] = useState("");
-
-    const lastScrollTop = useRef(0);
 
     useEffect(() => {
         const handleScroll = () => {
             const currentScroll = window.pageYOffset;
-            if (currentScroll < lastScrollTop.current) {
-                setIsSticky(true);
-                setVisible(true);
-            } else {
-                setVisible(false);
-            }
-            lastScrollTop.current = currentScroll <= 0 ? 0 : currentScroll;
+            setIsSticky(currentScroll > 0);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -75,27 +66,20 @@ const Navbar = () => {
 
     const getActiveClass = (itemId) => {
         const path = location.pathname;
-
-        // Homepage: nutze activeSection für IDs wie "über-uns"
         if (path === "/" || path === "/home") {
             const sectionId = itemId.startsWith("/") ? itemId.slice(1) : itemId;
             return activeSection === sectionId ? "text-[#FFC000]" : "";
         }
-
-        // Andere Seiten: vergleiche direkt mit dem Pfad
         return path === itemId ? "text-[#FFC000]" : "";
     };
 
-
     return (
         <header
-            className={`w-full fixed top-0 left-0 z-50 transition-all duration-500 ease-in-out 
-                ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"} 
-                ${isSticky ? "bg-[#f9ffff]/90 shadow text-gray-700" : "bg-transparent text-white"} 
+            className={`w-full fixed top-0 left-0 z-50 transition-all duration-500 ease-in-out
+                ${isSticky ? "bg-[#f9ffff]/90 shadow text-gray-700" : "bg-transparent text-white"}
                 backdrop-blur-sm`}
         >
             <div className="flex flex-col items-center py-2 px-4 md:px-8 pb-6">
-                {/* Logo */}
                 <a href="/">
                     <div className="w-[180px] h-auto mb-2">
                         <img
@@ -106,9 +90,7 @@ const Navbar = () => {
                     </div>
                 </a>
 
-                {/* Hamburger + Nav */}
                 <div className="w-full flex items-center justify-between md:justify-center relative">
-                    {/* Hamburger */}
                     <button
                         className="md:hidden"
                         onClick={() => setIsOpen(!isOpen)}
@@ -117,7 +99,6 @@ const Navbar = () => {
                         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
 
-                    {/* Navigation Links */}
                     <ul
                         className={`${isOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row items-center gap-5
                             font-semibold text-sm sm:text-base text-center absolute md:static top-full left-0 w-full md:w-auto
@@ -136,8 +117,6 @@ const Navbar = () => {
                                 </a>
                             </li>
                         ))}
-
-                        {/* BUCHUNG button (mobile) */}
                         <li className="md:hidden">
                             <PopupButton
                                 url="https://calendly.com/spielundspass"
@@ -148,7 +127,6 @@ const Navbar = () => {
                         </li>
                     </ul>
 
-                    {/* BUCHUNG button (desktop) */}
                     <div className="hidden sm:block absolute right-4 sm:right-[8%]">
                         <PopupButton
                             url="https://calendly.com/spielundspass"

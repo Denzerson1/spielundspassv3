@@ -5,7 +5,7 @@ import {
   FaTiktok,
 } from "react-icons/fa";
 
-import logo from '../img/spielundspass_bg.png'
+import logo from '../img/spielundspass_bg.png';
 
 function Footer() {
   return (
@@ -32,10 +32,11 @@ function Footer() {
               <FaInstagram />
             </a>
             <a
-              href="https://www.tiktok.com/@kinderpartyraum_spielspass"
+              href="https://www.tiktok.com/@spielspass.kinder?_t=ZN-8x5soW5m8JC&_r=1"
               target="_blank"
               rel="noopener noreferrer"
             >
+              <FaTiktok />
             </a>
           </div>
         </div>
