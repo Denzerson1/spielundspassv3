@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaPhoneAlt } from "react-icons/fa";
 
 const slides = [
   require('../img/brand/ball.jpeg'),
@@ -20,7 +21,7 @@ const Slideshow = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-gray-900 font-mukta">
-      
+
       {/* Slides */}
       <div
         className="absolute inset-0 flex transition-transform duration-1000"
@@ -49,13 +50,18 @@ const Slideshow = () => {
 
       {/* Social Icons */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex space-x-6 text-white">
-        <a href="https://www.facebook.com/austriantaj/" target="_blank" rel="noopener noreferrer">
-          <FaFacebookF size={24} className="hover:text-[#D19900]" />
+        <a href="tel:+43123456789" className="hover:text-[#D19900]">
+          <FaPhoneAlt size={24} />
         </a>
-        <a href="https://www.instagram.com/austriantaj1080/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.instagram.com/kinderpartyraum_spielundspass?utm_source=ig_web_button_share_sheet&igsh=MnFvcm5tdHVlMzF3"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaInstagram size={24} className="hover:text-[#D19900]" />
         </a>
       </div>
+
     </div>
   );
 };
