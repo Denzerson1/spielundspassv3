@@ -1,11 +1,12 @@
 // components/Footer.jsx
 import {
-  FaFacebookF,
+  FaPhoneAlt,
   FaInstagram,
   FaTiktok,
 } from "react-icons/fa";
 
 import logo from '../img/spielundspass_bg.png'
+
 function Footer() {
   return (
     <footer className="bg-[#FFF8E1] text-[#333] px-6 py-10">
@@ -22,12 +23,22 @@ function Footer() {
             Mehr als nur ein Ort der Freude! Kinderträume werden wahr.
           </p>
           <div className="flex space-x-4 mt-4 text-[#D19900] text-xl justify-center sm:justify-start">
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaTiktok /></a>
+            <a href="tel:+436764652228"><FaPhoneAlt /></a>
+            <a
+              href="https://www.instagram.com/kinderpartyraum_spielundspass?utm_source=ig_web_button_share_sheet&igsh=MnFvcm5tdHVlMzF3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://www.tiktok.com/@kinderpartyraum_spielspass"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            </a>
           </div>
         </div>
-
 
         {/* Navigation */}
         <div>
@@ -57,7 +68,7 @@ function Footer() {
           <p className="text-sm text-[#444] leading-6">
             Dückegasse 7/2 <br />
             1220 Wien<br />
-            +43 (0) 0676 4652228<br />
+            +43 (0) 676 4652228<br />
             <a href="mailto:office@spielraumkingandqueen.at" className="text-[#00B0F0] underline">
               office@spielundspass.co.at
             </a>
@@ -72,4 +83,5 @@ function Footer() {
     </footer>
   );
 }
-export default Footer;  
+
+export default Footer;
