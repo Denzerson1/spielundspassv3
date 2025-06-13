@@ -10,11 +10,10 @@ import React from "react";
 function LandingPage() {
     return (
         <div>
-            <Navbar />
             <Slideshow/>
-            <Reviews />
             <Grid />
             <Preise />
+            <Reviews />
             <Anfahrt />
         </div>
     );

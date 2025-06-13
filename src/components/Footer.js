@@ -1,4 +1,3 @@
-// components/Footer.jsx
 import {
   FaPhoneAlt,
   FaInstagram,
@@ -10,13 +9,13 @@ import logo from '../img/spielundspass_bg.png';
 function Footer() {
   return (
     <footer className="bg-[#FFF8E1] text-[#333] px-6 py-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
         {/* Logo & Slogan */}
         <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
           <img
             src={logo}
-            alt="King and Queen Logo"
+            alt="Spiel und Spass Logo"
             className="w-40 mb-4"
           />
           <p className="text-sm text-[#444] max-w-xs">
@@ -41,20 +40,8 @@ function Footer() {
           </div>
         </div>
 
-        {/* Navigation */}
-        <div>
-          <h3 className="font-semibold text-[#D19900] mb-3">Schnellzugriff</h3>
-          <ul className="space-y-2 text-sm text-[#555]">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Über uns</a></li>
-            <li><a href="#">Party</a></li>
-            <li><a href="#">Fotos</a></li>
-            <li><a href="#">Kontakt</a></li>
-          </ul>
-        </div>
-
         {/* Impressum */}
-        <div>
+        <div className="flex flex-col">
           <h3 className="font-semibold text-[#D19900] mb-3">Rechtliches</h3>
           <ul className="space-y-2 text-sm text-[#555]">
             <li><a href="#">Impressum</a></li>
@@ -64,17 +51,21 @@ function Footer() {
         </div>
 
         {/* Kontakt */}
-        <div>
+        <div className="flex flex-col">
           <h3 className="font-semibold text-[#D19900] mb-3">Kontakt</h3>
           <p className="text-sm text-[#444] leading-6">
             Dückegasse 7/2 <br />
             1220 Wien<br />
             +43 (0) 676 4652228<br />
-            <a href="mailto:office@spielraumkingandqueen.at" className="text-[#00B0F0] underline">
+            <a
+              href="mailto:office@spielraumkingandqueen.at"
+              className="text-[#00B0F0] underline"
+            >
               office@spielundspass.co.at
             </a>
           </p>
         </div>
+
       </div>
 
       {/* Bottom line */}

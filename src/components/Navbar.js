@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "../img/spielundspass_bg.png";
 import { PopupButton } from 'react-calendly';
@@ -6,19 +6,8 @@ import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
     const location = useLocation();
-    const [isSticky, setIsSticky] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("");
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScroll = window.pageYOffset;
-            setIsSticky(currentScroll > 0);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     useEffect(() => {
         if (location.pathname === "/" || location.pathname === "/home") {
@@ -76,12 +65,11 @@ const Navbar = () => {
     return (
         <header
             className={`w-full fixed top-0 left-0 z-50 transition-all duration-500 ease-in-out
-                ${isSticky ? "bg-[#f9ffff]/90 shadow text-gray-700" : "bg-transparent text-white"}
-                backdrop-blur-sm`}
+                bg-white shadow text-gray-700`}
         >
             <div className="flex flex-col items-center py-2 px-4 md:px-8 pb-6">
                 <a href="/">
-                    <div className="w-[180px] h-auto mb-2">
+                    <div className="w-[250px] h-auto mb-2">
                         <img
                             src={logo}
                             alt="Logo"
@@ -102,7 +90,7 @@ const Navbar = () => {
                     <ul
                         className={`${isOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row items-center gap-5
                             font-semibold text-sm sm:text-base text-center absolute md:static top-full left-0 w-full md:w-auto
-                            ${isSticky ? "text-black" : "text-white"} bg-white md:bg-transparent py-4 md:py-0 shadow-md md:shadow-none z-40`}
+                            text-black bg-white md:bg-white py-4 md:py-0 shadow-md md:shadow-none z-40`}
                     >
                         {navItems.map((item, idx) => (
                             <li

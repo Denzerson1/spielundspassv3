@@ -72,8 +72,8 @@ function PricingTable() {
       </div>
 
       <div className="mt-12 text-center">
-        <p className="text-gray-600 text-sm sm:text-base">
-          Bei uns ist jeder willkommen, unabhängig vom Alter!
+        <p className="text-orange-500 text-lg sm:text-xl font-semibold">
+          Bei uns ist jeder willkommen – unabhängig vom Alter!
         </p>
 
         <PopupButton
