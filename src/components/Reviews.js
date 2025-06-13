@@ -30,11 +30,16 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-[#FDF6EC] to-[#E0F7FA] py-16 px-6 text-center font-sans">
+    <div
+      className="py-16 px-6 text-center font-sans"
+      style={{
+        background: "linear-gradient(to bottom, #FDF6EC, #E0F7FA, #FDF6EC)",
+      }}
+    >
       <h2 className="text-4xl font-bold text-[#D19900] mb-2">Was Eltern sagen</h2>
       <p className="text-md text-gray-600 mb-10">
-      Weil glückliche Kinder das schönste Feedback sind.
-  </p>
+        Weil glückliche Kinder das schönste Feedback sind.
+      </p>
       <div className="relative max-w-6xl mx-auto overflow-hidden">
         <div
           className="flex transition-transform duration-700 ease-in-out"
