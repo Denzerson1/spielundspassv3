@@ -1,41 +1,31 @@
 import React from "react";
 
 const images = [
-  require('../img/Ballebad.jpeg'),
-  require('../img/branded.jpeg'),
-  require('../img/burg.jpeg'),
-  require('../img/fahrzeuge.jpeg'),
-  require('../img/spielwand.jpeg'),
-  require('../img/spiele.jpeg'),
-  require('../img/rutsche.jpeg'),
-  require('../img/kinderwindel.jpeg'),
-  require('../img/kuche.jpeg'),
-  require('../img/setting/restroom.jpeg'),
-  require('../img/Ballebad.jpeg'),
-  require('../img/branded.jpeg'),
-  require('../img/burg.jpeg'),
-  require('../img/fahrzeuge.jpeg'),
-  require('../img/spielwand.jpeg'),
-  require('../img/spiele.jpeg'),
-  require('../img/rutsche.jpeg'),
-  require('../img/kinderwindel.jpeg'),
-  require('../img/kuche.jpeg'),
-  require('../img/setting/restroom.jpeg'),
-  require('../img/Ballebad.jpeg'),
-  require('../img/branded.jpeg'),
-  require('../img/burg.jpeg'),
-  require('../img/fahrzeuge.jpeg'),
-  require('../img/spielwand.jpeg'),
-  require('../img/spiele.jpeg'),
-  require('../img/rutsche.jpeg'),
-  require('../img/kinderwindel.jpeg'),
-  require('../img/kuche.jpeg'),
-  require('../img/setting/restroom.jpeg'),
+  require('../img/fotopage/branded.jpeg'),
+  require('../img/fotopage/burg.jpeg'),
+  require('../img/fotopage/Ballebad.jpeg'),
+  require('../img/fotopage/fahrzeuge.jpeg'),
+  require('../img/fotopage/rutsche.jpeg'),
+  require('../img/fotopage/spielburg.jpeg'),
+  require('../img/fotopage/spiel1.jpeg'),
+  require('../img/fotopage/main2.jpeg'),
+  require('../img/fotopage/tisch.jpeg'),
+  require('../img/fotopage/thema.jpeg'),
+  require('../img/fotopage/custom.jpeg'),
+  require('../img/fotopage/custom2.jpeg'),
+  require('../img/fotopage/custom3.jpeg'),
+  require('../img/fotopage/custom4.jpeg'),
+  require('../img/fotopage/custom5.jpeg'),
+  require('../img/fotopage/IMG_1183.jpeg'),
+  require('../img/fotopage/IMG_1189.jpeg'),
+  require('../img/fotopage/IMG_3237.jpeg'),
+  require('../img/fotopage/IMG_4405.jpeg'),
+  require('../img/fotopage/IMG_8517.jpeg'),
 ];
 
 export default function PhotosPage() {
   return (
-    <div className="pt-48 min-h-screen bg-gradient-to-b from-[#A3DDFF] via-[#EAF6FB] to-[#FFF8E1] py-24 px-4">
+    <div className="pt-64 min-h-screen bg-gradient-to-b from-[#A3DDFF] via-[#EAF6FB] to-[#FFF8E1] py-24 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl sm:text-5xl font-extrabold text-orange-400 mb-12 text-center tracking-tight">
           Impressionen & Momente

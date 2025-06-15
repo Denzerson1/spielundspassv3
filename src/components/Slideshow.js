@@ -47,7 +47,7 @@ const NavbarWithSlideshow = () => {
   // Active section tracking for home
   useEffect(() => {
     if (location.pathname === "/" || location.pathname === "/home") {
-      const sectionIds = ["home", "über-uns", "party", "preise", "fotos", "kontakt"];
+      const sectionIds = ["home", "ueber-uns", "party", "preise", "fotos", "kontakt"];
       const observer = new IntersectionObserver(
         entries => {
           entries.forEach(entry => {
@@ -75,7 +75,7 @@ const NavbarWithSlideshow = () => {
 
   const navItems = [
     { label: "Home", id: "/" },
-    { label: "Über uns", id: "/über-uns" },
+    { label: "Über uns", id: "/ueber-uns" },
     { label: "Preise", id: "/preise" },
     { label: "Fotos", id: "/fotos" },
     { label: "Kontakt", id: "/kontakt" },

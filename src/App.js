@@ -19,7 +19,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/über-uns" element={<About />} />
+          <Route path="/ueber-uns" element={<About />} />
           <Route path="/kontakt" element={<Contact />} />
           <Route path="/fotos" element={<Fotos />} />
           <Route path="/preise" element={<Preise />} />

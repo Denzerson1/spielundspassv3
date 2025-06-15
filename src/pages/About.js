@@ -4,7 +4,7 @@ import { PopupButton } from 'react-calendly';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#A3DDFF] to-[#FFF8E1] px-8 py-24">
+    <div className="min-h-screen bg-gradient-to-b from-[#A3DDFF] to-[#FFF8E1] px-8 py-28">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-5xl pt-36 font-bold text-[#2b3856] mb-20 text-center tracking-tight">
           Über uns
