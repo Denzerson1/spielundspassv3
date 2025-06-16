@@ -28,62 +28,75 @@ function PricingTable() {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-[#EFF6FF] to-[#FDF6EC] flex flex-col items-center py-8 px-4 md:px-8">
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-orange-400 mb-10 text-center">
-        PREISE
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full max-w-7xl">
-        {pricingData.map((block, index) => (
-          <div
-            key={index}
-            className="bg-white p-6 sm:p-8 rounded-2xl border border-cyan-300 shadow-lg flex flex-col justify-between"
-          >
-            <div>
-              <div className="text-sm font-semibold text-cyan-600 mb-1">
-                0{index + 1}
-              </div>
-              <h2 className="text-xl sm:text-2xl text-orange-500 font-extrabold mb-4">
-                {block.title}
-              </h2>
-              <hr className="mb-4 border-cyan-200" />
-              {block.items.map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-center justify-between mb-3 text-gray-700"
-                >
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-cyan-500" />
-                    <span className="text-sm sm:text-base">{item.time}</span>
-                  </div>
-                  <div className="font-medium text-sm sm:text-base">
-                    {item.price}
-                  </div>
+    <div className="pt-64 min-h-screen flex flex-col justify-between bg-gradient-to-b from-[#A3DDFF] via-[#EAF6FB] to-[#FFF8E1]">
+      <div className="flex flex-col items-center py-8 px-4 md:px-8 flex-1">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-orange-400 mb-10 text-center">
+          PREISE
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full max-w-7xl">
+          {pricingData.map((block, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 sm:p-8 rounded-2xl border border-cyan-300 shadow-lg flex flex-col justify-between"
+            >
+              <div>
+                <div className="text-sm font-semibold text-cyan-600 mb-1">
+                  0{index + 1}
                 </div>
-              ))}
-              <hr className="my-4 border-cyan-200" />
-              <ul className="text-xs sm:text-sm text-gray-600 space-y-1">
-                {commonDetails.map((detail, dIdx) => (
-                  <li key={dIdx}>{detail}</li>
+                <h2 className="text-xl sm:text-2xl text-orange-500 font-extrabold mb-4">
+                  {block.title}
+                </h2>
+                <hr className="mb-4 border-cyan-200" />
+                {block.items.map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center justify-between mb-3 text-gray-700"
+                  >
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-cyan-500" />
+                      <span className="text-sm sm:text-base">{item.time}</span>
+                    </div>
+                    <div className="font-medium text-sm sm:text-base">
+                      {item.price}
+                    </div>
+                  </div>
                 ))}
-              </ul>
+
+                <div className="flex justify-between mt-4 pt-3 border-t border-cyan-200 text-gray-700 text-sm sm:text-base">
+                  <span className="text-left max-w-[calc(100%-6rem)]">
+                    Gewünschtes Motto/Farbe (Dekorationspauschale)
+                  </span>
+                  <span className="whitespace-nowrap">+ € 250</span>
+                </div>
+
+
+
+                <hr className="my-4 border-cyan-200" />
+                <ul className="text-xs sm:text-sm text-gray-600 space-y-1">
+                  {commonDetails.map((detail, dIdx) => (
+                    <li key={dIdx}>{detail}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-gray-600 text-sm sm:text-base">
+            Bei uns ist jeder willkommen, unabhängig vom Alter!
+          </p>
+
+          <PopupButton
+            url="https://calendly.com/spielundspass"
+            rootElement={document.getElementById('root')}
+            text="Jetzt buchen"
+            className="mt-5 px-6 py-2 bg-gray-800 text-white text-sm sm:text-base rounded-full shadow-md hover:bg-gray-700 transition duration-200"
+          />
+        </div>
       </div>
-
-      <div className="mt-12 text-center">
-        <p className="text-orange-500 text-lg sm:text-xl font-semibold">
-          Bei uns ist jeder willkommen – unabhängig vom Alter!
-        </p>
-
-        <PopupButton
-          url="https://calendly.com/spielundspass"
-          rootElement={document.getElementById('root')}
-          text="Jetzt buchen"
-          className="mt-5 px-6 py-2 bg-gray-800 text-white text-sm sm:text-base rounded-full shadow-md hover:bg-gray-700 transition duration-200"
-        />
-
-      </div>
+      {/* Footer Gradient Übergang */}
+      <div className="h-32 w-full bg-gradient-to-b from-transparent to-[#FFF8E1]" />
     </div>
   );
 }
