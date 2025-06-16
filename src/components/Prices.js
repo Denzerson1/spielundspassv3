@@ -28,7 +28,7 @@ function PricingTable() {
   ];
 
   return (
-    <div className="pt-64 min-h-screen flex flex-col justify-between bg-gradient-to-b from-[#A3DDFF] via-[#EAF6FB] to-[#FFF8E1]">
+    <div className="bg-gradient-to-b from-[#EFF6FF] to-[#FDF6EC] flex flex-col items-center py-8 px-4 md:px-8">
       <div className="flex flex-col items-center py-8 px-4 md:px-8 flex-1">
         <h1 className="text-4xl sm:text-5xl font-extrabold text-orange-400 mb-10 text-center">
           PREISE
