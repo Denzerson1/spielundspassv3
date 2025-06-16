@@ -22,7 +22,7 @@ function Footer() {
             Mehr als nur ein Ort der Freude! Kinderträume werden wahr.
           </p>
           <div className="flex space-x-4 mt-4 text-[#D19900] text-xl justify-center sm:justify-start">
-            <a href="tel:+436764652228"><FaPhoneAlt /></a>
+            <a href="tel:+4369911930909"><FaPhoneAlt /></a>
             <a
               href="https://www.instagram.com/kinderpartyraum_spielundspass?utm_source=ig_web_button_share_sheet&igsh=MnFvcm5tdHVlMzF3"
               target="_blank"
@@ -54,7 +54,7 @@ function Footer() {
           <p className="text-sm text-[#444] leading-6">
             Dückegasse 7/2 <br />
             1220 Wien<br />
-            +43 (0) 676 4652228<br />
+            +43 (0) 699 1193 0909<br />
             <a
               href="mailto:office@spielraumkingandqueen.at"
               className="text-[#00B0F0] underline"
