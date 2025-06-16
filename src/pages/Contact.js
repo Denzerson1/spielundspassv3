@@ -14,8 +14,8 @@ export default function ContactPage() {
     e.preventDefault();
 
     emailjs.send(
-      'service_7iwx57e',
-      'template_rxfo5ql',
+      'service_b821pby',
+      'template_e1ybklb',
       formData,
       'wsM6-xa5o51TKoqM_'
     )
