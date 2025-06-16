@@ -17,7 +17,7 @@ export default function ContactPage() {
       'service_b821pby',
       'template_e1ybklb',
       formData,
-      'wsM6-xa5o51TKoqM_'
+      'KCKyiWCGEFuiFKWNO'
     )
     .then(() => {
       setSuccess(true);
