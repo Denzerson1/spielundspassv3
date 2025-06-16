@@ -49,7 +49,7 @@ const playAreas = [
     title: "Küche",
     image: require('../img/kuche.jpeg'),
     description:
-      "Für Eltern: Unsere voll ausgestattete Küche erleichtert das Zubereiten von Snacks und Mahlzeiten.",
+      "Für Eltern: Unsere Küche erleichtert das Zubereiten von Snacks und Mahlzeiten.",
   },
   {
     title: "Toiletten",
