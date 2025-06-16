@@ -95,8 +95,6 @@ function PricingTable() {
           />
         </div>
       </div>
-      {/* Footer Gradient Übergang */}
-      <div className="h-32 w-full bg-gradient-to-b from-transparent to-[#FFF8E1]" />
     </div>
   );
 }
