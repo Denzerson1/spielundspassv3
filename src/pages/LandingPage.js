@@ -4,12 +4,12 @@ import Slideshow from '../components/Slideshow';
 import Preise from '../components/Prices';
 import Reviews from '../components/Reviews';
 import Anfahrt from '../components/Anfahrt';
-
-import React from "react";
+import Flyer from '../components/Flyer';
 
 function LandingPage() {
     return (
         <div>
+            <Flyer />
             <Slideshow/>
             <Grid />
             <Preise />

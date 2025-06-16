@@ -13,7 +13,7 @@ const Navbar = () => {
         if (location.pathname === "/" || location.pathname === "/home") {
             const sectionIds = [
                 "home",
-                "über-uns",
+                "ueber-uns",
                 "party",
                 "preise",
                 "fotos",
@@ -47,7 +47,7 @@ const Navbar = () => {
 
     const navItems = [
         { label: "Home", id: "/" },
-        { label: "Über uns", id: "/über-uns" },
+        { label: "Über uns", id: "/ueber-uns" },
         { label: "Preise", id: "/preise" },
         { label: "Fotos", id: "/fotos" },
         { label: "Kontakt", id: "/kontakt" },
@@ -64,8 +64,8 @@ const Navbar = () => {
 
     return (
         <header
-            className={`w-full fixed top-0 left-0 z-50 transition-all duration-500 ease-in-out
-                bg-white shadow text-gray-700`}
+            className={`w-full fixed top-0 left-0 z-30 transition-all duration-500 ease-in-out
+                bg-white text-gray-700`}
         >
             <div className="flex flex-col items-center py-2 px-4 md:px-8 pb-6">
                 <a href="/">
@@ -90,7 +90,7 @@ const Navbar = () => {
                     <ul
                         className={`${isOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row items-center gap-5
                             font-semibold text-sm sm:text-base text-center absolute md:static top-full left-0 w-full md:w-auto
-                            text-black bg-white md:bg-white py-4 md:py-0 shadow-md md:shadow-none z-40`}
+                            text-black bg-white/90 md:bg-white/70 backdrop-blur-md py-4 md:py-0 shadow-md md:shadow-none z-40`}
                     >
                         {navItems.map((item, idx) => (
                             <li

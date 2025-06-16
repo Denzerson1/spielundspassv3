@@ -28,7 +28,7 @@ function PricingTable() {
   ];
 
   return (
-    <div className="pt-48 min-h-screen flex flex-col justify-between bg-gradient-to-b from-[#A3DDFF] via-[#EAF6FB] to-[#FFF8E1]">
+    <div className="pt-64 min-h-screen flex flex-col justify-between bg-gradient-to-b from-[#A3DDFF] via-[#EAF6FB] to-[#FFF8E1]">
       <div className="flex flex-col items-center py-8 px-4 md:px-8 flex-1">
         <h1 className="text-4xl sm:text-5xl font-extrabold text-orange-400 mb-10 text-center">
           PREISE
@@ -61,6 +61,16 @@ function PricingTable() {
                     </div>
                   </div>
                 ))}
+
+                <div className="flex justify-between mt-4 pt-3 border-t border-cyan-200 text-gray-700 text-sm sm:text-base">
+                  <span className="text-left max-w-[calc(100%-6rem)]">
+                    Gewünschtes Motto/Farbe (Dekorationspauschale)
+                  </span>
+                  <span className="whitespace-nowrap">+ € 250</span>
+                </div>
+
+
+
                 <hr className="my-4 border-cyan-200" />
                 <ul className="text-xs sm:text-sm text-gray-600 space-y-1">
                   {commonDetails.map((detail, dIdx) => (

@@ -65,8 +65,16 @@ const PlayAreaGrid = () => {
       <div className="w-full max-w-7xl px-4">
         <h1 className="text-4xl font-bold text-center text-orange-500 mb-4">SPIELEN. LACHEN. WOHLFÜHLEN!</h1>
         <p className="text-center text-md font-semibold text-gray-700 mb-10">
-          Willkommen in einer Welt voller Fantasie und Geborgenheit! Bei uns erleben Kinder Abenteuer, Kreativität und Freude – während Eltern sich auf höchsten Komfort, Sicherheit und ein herzliches Ambiente verlassen können. Genießt gemeinsam besondere Momente, die in Erinnerung bleiben!
+          Bei uns erleben Kinder Abenteuer, Kreativität und pure Freude – während sich Eltern
+          auf höchsten Komfort, Sicherheit und ein herzliches Ambiente verlassen können.
+          Genießt gemeinsam unvergessliche Momente, die lange in Erinnerung bleiben.
         </p>
+        <p className="text-center text-md font-semibold text-gray-700 mb-10">
+          Es stehen jeweils 20 Sitzplätze für Erwachsene und 20 für Kinder zur Verfügung.
+          Insgesamt dürfen sich jedoch maximal 50 Personen im Raum aufhalten – ganz gleich, wie
+          viele davon groß oder klein sind.
+        </p>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {playAreas.map((area, index) => (
             <div key={index} className="border rounded-xl shadow-md overflow-hidden p-4 bg-white">
@@ -81,7 +89,7 @@ const PlayAreaGrid = () => {
           ))}
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

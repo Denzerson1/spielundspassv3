@@ -47,7 +47,7 @@ const NavbarWithSlideshow = () => {
   // Active section tracking for home
   useEffect(() => {
     if (location.pathname === "/" || location.pathname === "/home") {
-      const sectionIds = ["home", "über-uns", "party", "preise", "fotos", "kontakt"];
+      const sectionIds = ["home", "ueber-uns", "party", "preise", "fotos", "kontakt"];
       const observer = new IntersectionObserver(
         entries => {
           entries.forEach(entry => {
@@ -75,7 +75,7 @@ const NavbarWithSlideshow = () => {
 
   const navItems = [
     { label: "Home", id: "/" },
-    { label: "Über uns", id: "/über-uns" },
+    { label: "Über uns", id: "/ueber-uns" },
     { label: "Preise", id: "/preise" },
     { label: "Fotos", id: "/fotos" },
     { label: "Kontakt", id: "/kontakt" },
@@ -95,7 +95,8 @@ const NavbarWithSlideshow = () => {
       {/* Navbar */}
       <header
         ref={navbarRef}
-        className={`w-full fixed top-0 left-0 z-50 bg-white shadow text-gray-700 transition-all duration-500 ease-in-out`}
+        className={`w-full fixed top-0 left-0 z-10 bg-white text-gray-700 transition-all duration-500 ease-in-out`}
+
       >
         <div className="flex flex-col items-center py-2 px-4 md:px-8 pb-6">
           <a href="/">
@@ -181,9 +182,7 @@ const NavbarWithSlideshow = () => {
           ))}
         </div>
 
-        {/* Gradient */}
-        <div className="absolute bottom-0 left-0 w-full h-[10%] bg-gradient-to-t from-black to-transparent z-10" />
-
+        
         {/* Text */}
         <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20 text-center">
           <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-light drop-shadow-lg">

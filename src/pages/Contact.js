@@ -73,7 +73,6 @@ export default function ContactPage() {
         {/* Right: Info */}
         <div className="bg-white p-10 rounded-2xl shadow-lg text-center md:text-left flex flex-col justify-center">
           <img src={logo} alt="Logo" className="mx-auto md:mx-0 w-40 mb-4" />
-          <h3 className="text-2xl font-bold text-[#2b3856] mb-4">Spiel & Spaß</h3>
           <div className="h-[1px] w-3/4 mx-auto md:mx-0 bg-gray-300 my-6" />
           <p className="text-gray-800 font-medium mb-2">Email: office@spielundspass.co.at</p>
           <p className="text-gray-800 font-medium mb-2">Telefon: +43 (0) 676 4652228</p>

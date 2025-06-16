@@ -40,13 +40,11 @@ function Footer() {
           </div>
         </div>
 
-        {/* Impressum */}
         <div className="flex flex-col">
           <h3 className="font-semibold text-[#D19900] mb-3">Rechtliches</h3>
           <ul className="space-y-2 text-sm text-[#555]">
-            <li><a href="#">Impressum</a></li>
-            <li><a href="#">Datenschutz</a></li>
-            <li><a href="#">AGB</a></li>
+            <li><a href="/datenschutz">Datenschutz</a></li>
+            <li><a href="/agb">AGB</a></li>
           </ul>
         </div>
 
