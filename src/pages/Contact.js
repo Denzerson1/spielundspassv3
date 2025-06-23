@@ -14,10 +14,10 @@ export default function ContactPage() {
     e.preventDefault();
 
     emailjs.send(
-      'service_b821pby',
-      'template_e1ybklb',
+      'service_7iwx57e',
+      'template_rxfo5ql',
       formData,
-      'KCKyiWCGEFuiFKWNO'
+      'wsM6-xa5o51TKoqM_'
     )
     .then(() => {
       setSuccess(true);
@@ -75,7 +75,7 @@ export default function ContactPage() {
           <img src={logo} alt="Logo" className="mx-auto md:mx-0 w-40 mb-4" />
           <div className="h-[1px] w-3/4 mx-auto md:mx-0 bg-gray-300 my-6" />
           <p className="text-gray-800 font-medium mb-2">Email: office@spielundspass.co.at</p>
-          <p className="text-gray-800 font-medium mb-2">Telefon: +43 (0) 699 1193 0909</p>
+          <p className="text-gray-800 font-medium mb-2">Telefon: +43 (0) 676 4652228 / +43 676 4652228</p>
           <p className="text-gray-800 font-medium">Adresse: Dückegasse 7/2, 1220 Wien</p>
         </div>
       </div>
