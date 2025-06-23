@@ -22,6 +22,20 @@ const NavbarWithSlideshow = () => {
   const [navbarHeight, setNavbarHeight] = useState(0);
   const navbarRef = useRef(null);
 
+  // Phone popup
+  const phoneRef = useRef();
+  const [showPhonePopup, setShowPhonePopup] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (phoneRef.current && !phoneRef.current.contains(e.target)) {
+        setShowPhonePopup(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   // Slideshow index auto-increment
   useEffect(() => {
     const interval = setInterval(() => {
@@ -96,7 +110,6 @@ const NavbarWithSlideshow = () => {
       <header
         ref={navbarRef}
         className={`w-full fixed top-0 left-0 z-10 bg-white text-gray-700 transition-all duration-500 ease-in-out`}
-
       >
         <div className="flex flex-col items-center py-2 px-4 md:px-8 pb-6">
           <a href="/">
@@ -182,7 +195,6 @@ const NavbarWithSlideshow = () => {
           ))}
         </div>
 
-        
         {/* Text */}
         <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20 text-center">
           <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-light drop-shadow-lg">
@@ -190,11 +202,20 @@ const NavbarWithSlideshow = () => {
           </p>
         </div>
 
-        {/* Social icons */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex space-x-6 text-white">
-          <a href="tel:+436764652228" className="hover:text-[#D19900]">
+        {/* Social icons with phone overlay */}
+        <div
+          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex space-x-6 text-white"
+          ref={phoneRef}
+        >
+          <button onClick={() => setShowPhonePopup(!showPhonePopup)} className="relative hover:text-[#D19900]">
             <FaPhoneAlt size={24} />
-          </a>
+            {showPhonePopup && (
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white text-black text-sm shadow-md rounded p-2 z-50 w-48">
+                <a href="tel:+436764652228" className="block hover:underline mb-1">+43 676 4652228</a>
+                <a href="tel:+4369911930909" className="block hover:underline">+43 699 11930909</a>
+              </div>
+            )}
+          </button>
           <a
             href="https://www.instagram.com/kinderpartyraum_spielundspass"
             target="_blank"
