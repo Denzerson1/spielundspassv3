@@ -54,6 +54,7 @@ function Footer() {
           <p className="text-sm text-[#444] leading-6">
             Dückegasse 7/2 <br />
             1220 Wien<br />
+            +43 (0) 676 4652 228
             +43 (0) 699 1193 0909<br />
             <a
               href="mailto:office@spielraumkingandqueen.at"
