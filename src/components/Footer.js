@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from "react";
 import {
   FaPhoneAlt,
   FaInstagram,
@@ -7,6 +8,19 @@ import {
 import logo from '../img/spielundspass_bg.png';
 
 function Footer() {
+  const [showPhones, setShowPhones] = useState(false);
+  const phoneRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (phoneRef.current && !phoneRef.current.contains(e.target)) {
+        setShowPhones(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <footer className="bg-[#FFF8E1] text-[#333] px-6 py-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -21,8 +35,29 @@ function Footer() {
           <p className="text-sm text-[#444] max-w-xs">
             Mehr als nur ein Ort der Freude! Kinderträume werden wahr.
           </p>
-          <div className="flex space-x-4 mt-4 text-[#D19900] text-xl justify-center sm:justify-start">Add commentMore actions
-            <a href="tel:+4369911930909"><FaPhoneAlt /></a>
+
+          {/* Social Icons + Phone */}
+          <div className="relative flex space-x-4 mt-4 text-[#D19900] text-xl justify-center sm:justify-start" ref={phoneRef}>
+            {/* Phone Icon */}
+            <button
+              onClick={() => setShowPhones(!showPhones)}
+              className="relative focus:outline-none"
+              aria-label="Telefonnummern anzeigen"
+            >
+              <FaPhoneAlt />
+              {showPhones && (
+                <div className="absolute top-8 left-0 bg-white border border-[#ccc] rounded shadow p-3 text-sm z-50 w-56 max-w-[90vw]">
+                  <a href="tel:+436764652228" className="block text-[#333] hover:underline mb-2">
+                    +43 676 4652228
+                  </a>
+                  <a href="tel:+4369911930909" className="block text-[#333] hover:underline">
+                    +43 699 11930909
+                  </a>
+                </div>
+              )}
+            </button>
+
+            {/* Instagram */}
             <a
               href="https://www.instagram.com/kinderpartyraum_spielundspass?utm_source=ig_web_button_share_sheet&igsh=MnFvcm5tdHVlMzF3"
               target="_blank"
@@ -30,6 +65,8 @@ function Footer() {
             >
               <FaInstagram />
             </a>
+
+            {/* TikTok */}
             <a
               href="https://www.tiktok.com/@spielspass.kinder?_t=ZN-8x5soW5m8JC&_r=1"
               target="_blank"
@@ -40,6 +77,7 @@ function Footer() {
           </div>
         </div>
 
+        {/* Rechtliches */}
         <div className="flex flex-col">
           <h3 className="font-semibold text-[#D19900] mb-3">Rechtliches</h3>
           <ul className="space-y-2 text-sm text-[#555]">
@@ -54,8 +92,6 @@ function Footer() {
           <p className="text-sm text-[#444] leading-6">
             Dückegasse 7/2 <br />
             1220 Wien<br />
-            +43 (0) 676 4652 228
-            +43 (0) 699 1193 0909<br />
             <a
               href="mailto:office@spielraumkingandqueen.at"
               className="text-[#00B0F0] underline"
