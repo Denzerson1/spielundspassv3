@@ -21,23 +21,7 @@ function Footer() {
           <p className="text-sm text-[#444] max-w-xs">
             Mehr als nur ein Ort der Freude! Kinderträume werden wahr.
           </p>
-          <div className="flex space-x-4 mt-4 text-[#D19900] text-xl justify-center sm:justify-start">
-            <div className="relative inline-block">
-      <button onClick={toggleNumbers} className="text-xl">
-        <FaPhoneAlt />
-      </button>
-
-      {showNumbers && (
-        <div className="absolute mt-2 p-2 bg-white shadow rounded border z-10">
-          <a href="tel:+436764652228" className="block text-blue-600 hover:underline">
-            +43 676 4652228
-          </a>
-          <a href="tel:+4369911930909" className="block text-blue-600 hover:underline">
-            +43 699 11930909
-          </a>
-        </div>
-      )}
-    </div>
+          <a href="tel:+4369911930909"><FaPhoneAlt /></a>
             <a
               href="https://www.instagram.com/kinderpartyraum_spielundspass?utm_source=ig_web_button_share_sheet&igsh=MnFvcm5tdHVlMzF3"
               target="_blank"
