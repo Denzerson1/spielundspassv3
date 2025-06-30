@@ -35,6 +35,7 @@ function Footer() {
           <p className="text-sm text-[#444] max-w-xs">
             Mehr als nur ein Ort der Freude! Kinderträume werden wahr.
           </p>
+          <p className="text-xs text-[#aaa] mt-2">Site by DK</p>
 
           {/* Social Icons + Phone */}
           <div className="relative flex space-x-4 mt-4 text-[#D19900] text-xl justify-center sm:justify-start" ref={phoneRef}>
