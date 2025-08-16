@@ -9,7 +9,6 @@ import Flyer from '../components/Flyer';
 function LandingPage() {
     return (
         <div>
-            <Flyer />
             <Slideshow/>
             <Grid />
             <Preise />
